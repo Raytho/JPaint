@@ -3,11 +3,11 @@ package jpaint;
 
 
 public class Application {
-
+    ViewMainFrame mainFrame;
     public Application() {
     }
     
     public void main(){
-        ViewMainFrame mainFrame = new ViewMainFrame(this);
+        mainFrame = new ViewMainFrame(this);
     }
 }
