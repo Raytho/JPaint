@@ -12,21 +12,25 @@ public class ButtonColorChooser extends JButton implements ActionListener{
     private Color color;
     public ButtonColorChooser(boolean isBackground){
         this.isBackground = isBackground;
-        if(isBackground){
+        if(isBackground)
             this.color = Color.white;
-            this.setBackground(this.color);
-        }else{
+        else
             this.color = Color.black;
-            this.setBackground(this.color);
-        }
+        
+        this.setBackground(this.color);
         this.addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent ae){
         Color initialBackground = this.getBackground();
-        Color background = JColorChooser.showDialog(null, "Change Button Background",
-            initialBackground);
+        Color background;
+        if(isBackground)
+            background = JColorChooser.showDialog(null, "Change background color",initialBackground);
+        else
+            background = JColorChooser.showDialog(null, "Change frontground color", initialBackground);
+        
+        
         if (background != null) {
           this.setColor(background);
         }
