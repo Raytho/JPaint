@@ -9,6 +9,7 @@ public class ViewMainFrame extends JFrame{
     Application app;
     ViewStateBar stateBar;
     ViewToolBar toolBar;
+    ViewDrawingPanel drawingPanel;
     public ViewMainFrame(Application app) {
         super("JPaint");
         this.app = app;
@@ -17,9 +18,10 @@ public class ViewMainFrame extends JFrame{
         
         stateBar = new ViewStateBar();
         toolBar = new ViewToolBar(app);
+        drawingPanel = new ViewDrawingPanel(app);
         this.add(stateBar, BorderLayout.SOUTH);
         this.add(toolBar,  BorderLayout.WEST);
-        this.add(new JPanel(), BorderLayout.CENTER);
+        this.add(drawingPanel, BorderLayout.CENTER);
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();

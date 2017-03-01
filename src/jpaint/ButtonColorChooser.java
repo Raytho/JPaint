@@ -13,9 +13,9 @@ public class ButtonColorChooser extends JButton implements ActionListener{
     public ButtonColorChooser(boolean isBackground){
         this.isBackground = isBackground;
         if(isBackground)
-            this.color = Color.white;
+            this.color = Color.red;
         else
-            this.color = Color.black;
+            this.color = Color.blue;
         
         this.setBackground(this.color);
         this.addActionListener(this);
